@@ -4,17 +4,17 @@ PocketRepro es una herramienta local en desarrollo para probar sitios web en tel
 
 ## Probar la demo
 
-La demo de barbería, hecha con React y Vite, reproduce un fallo controlado en `/citas`. En la variante rota, **Reservar** queda cargando y Chrome registra un `TypeError`. La variante corregida confirma el mismo turno.
+La demo **Mesa de ayuda** simula la reserva de una cita de soporte técnico en `/citas`. En la variante rota, **Reservar** queda cargando y Chrome registra un `TypeError`. La variante corregida confirma el mismo turno.
 
 En Windows, ejecuta estos comandos desde la raíz del repositorio con Node.js `^20.19.0 || >=22.12.0` y pnpm 11.
 
 ```powershell
-cd examples/barbershop
+cd examples/support-appointments
 pnpm.cmd install --frozen-lockfile
 pnpm.cmd dev --host 127.0.0.1 --port 5173 --strictPort
 ```
 
-Abre [la demo de citas](http://127.0.0.1:5173/citas), elige **15:20** y pulsa **Reservar**. La guía explica cómo probar la variante corregida, conectarte desde Android y ejecutar las pruebas. [Guía de la demo](examples/barbershop/README.md)
+Abre [la demo de citas](http://127.0.0.1:5173/citas), elige **15:20** y pulsa **Reservar**. La guía explica cómo probar la variante corregida, conectarte desde Android y ejecutar las pruebas. [Guía de la demo](examples/support-appointments/README.md)
 
 ## Hoja de ruta
 

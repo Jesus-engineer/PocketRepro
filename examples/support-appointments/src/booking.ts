@@ -1,7 +1,9 @@
 export type DemoVariant = 'broken' | 'fixed'
 
 export const appointment = {
-  service: 'Corte clasico',
+  service: 'Diagnóstico técnico',
+  duration: '30 minutos',
+  modality: 'Remota',
   time: '15:20',
 } as const
 

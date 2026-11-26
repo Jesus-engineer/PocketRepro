@@ -1,13 +1,13 @@
-# Demo de barbería
+# Mesa de ayuda
 
-Esta app React/Vite reproduce un fallo controlado en `/citas`. La variante rota deja **Reservar** cargando y lanza un `TypeError` sin manejar. La variante corregida confirma el turno. La demo usa datos ficticios y funciona de forma independiente. El panel de errores de Vite está desactivado para que el estado de carga quede visible.
+Este portal de demostración agenda una cita ficticia de diagnóstico técnico en `/citas`. La variante rota deja **Reservar** cargando y lanza un `TypeError` sin manejar. La variante corregida confirma el turno. El panel de errores de Vite está desactivado para que el estado de carga quede visible.
 
 ## Arranque en Windows (PowerShell)
 
 Instala Node.js `^20.19.0 || >=22.12.0` y pnpm 11. Ejecuta estos comandos desde la raíz del repositorio. `pnpm.cmd` funciona en PowerShell cuando la política de ejecución bloquea `pnpm.ps1`.
 
 ```powershell
-cd examples/barbershop
+cd examples/support-appointments
 pnpm.cmd install --frozen-lockfile
 pnpm.cmd dev --host 127.0.0.1 --port 5173 --strictPort
 ```
@@ -20,7 +20,7 @@ Para comprobar la variante corregida, detén el servidor con Ctrl+C y ejecuta el
 pnpm.cmd dev:fixed --host 127.0.0.1 --port 5173 --strictPort
 ```
 
-Abre otra vez `/citas`, elige **15:20** y pulsa **Reservar**. Aparece la confirmación. `pnpm.cmd dev` vuelve a la variante rota. Para cambiar de variante, reinicia el servidor y recarga la página.
+Abre otra vez `/citas`, elige **15:20** y pulsa **Reservar**. La página muestra **Reserva confirmada para las 15:20**. `pnpm.cmd dev` vuelve a la variante rota. Para cambiar de variante, reinicia el servidor y recarga la página.
 
 ## Acceso desde Android en una red privada
 
