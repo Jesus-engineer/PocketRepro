@@ -1,6 +1,6 @@
-# Demo de barberia
+# Demo de barbería
 
-Esta app React/Vite reproduce un fallo controlado en `/citas`. La variante rota deja **Reservar** cargando y lanza un `TypeError` no manejado; la variante corregida confirma el turno. No usa datos personales ni el plugin PocketRepro. El overlay de errores de Vite esta desactivado en la demo para que no oculte el estado cargando.
+Esta app React/Vite reproduce un fallo controlado en `/citas`. La variante rota deja **Reservar** cargando y lanza un `TypeError` sin manejar. La variante corregida confirma el turno. La demo usa datos ficticios y funciona de forma independiente. El panel de errores de Vite está desactivado para que el estado de carga quede visible.
 
 ## Arranque en Windows (PowerShell)
 
@@ -12,19 +12,19 @@ pnpm.cmd install --frozen-lockfile
 pnpm.cmd dev --host 127.0.0.1 --port 5173 --strictPort
 ```
 
-Abrir `http://127.0.0.1:5173/citas` en el PC. La variante rota es la predeterminada. Elegir **15:20** y tocar **Reservar**: el boton queda en **Reservando...** y Chrome informa un `TypeError`. Refrescar la pagina para empezar desde cero.
+Abre `http://127.0.0.1:5173/citas` en el PC. La variante rota es la predeterminada. Elige **15:20** y pulsa **Reservar**. El botón queda en **Reservando...** y Chrome informa un `TypeError`. Recarga la página para empezar desde cero.
 
-Para comprobar la variante corregida, detener el servidor con Ctrl+C y ejecutar:
+Para comprobar la variante corregida, detén el servidor con Ctrl+C y ejecuta el siguiente comando.
 
 ```powershell
 pnpm.cmd dev:fixed --host 127.0.0.1 --port 5173 --strictPort
 ```
 
-Abrir otra vez `/citas`, elegir **15:20** y tocar **Reservar**. Aparece la confirmación. `pnpm.cmd dev` vuelve a la variante rota. Para cambiar de variante, reinicia el servidor y recarga la página.
+Abre otra vez `/citas`, elige **15:20** y pulsa **Reservar**. Aparece la confirmación. `pnpm.cmd dev` vuelve a la variante rota. Para cambiar de variante, reinicia el servidor y recarga la página.
 
 ## Acceso desde Android en una red privada
 
-Conectar el PC y el telefono al mismo Wi-Fi de confianza. En Windows 11, comprobar el perfil con `Get-NetConnectionProfile`. Si aparece `Public`, ir a **Configuracion > Red e Internet > Wi-Fi > Propiedades de la red** y elegir **Privada** solo si se confia en esa red. No cambiar el perfil de una red publica ni habilitar el firewall para redes publicas.
+Conecta el PC y el teléfono al mismo Wi-Fi de confianza. En Windows 11, comprueba el perfil con `Get-NetConnectionProfile`. Si aparece `Public` en una red que conoces y en la que confías, puedes elegir **Privada** en **Configuración > Red e Internet > Wi-Fi > Propiedades de la red**.
 
 Usa `ipconfig` en el PC para identificar la IPv4 privada de la interfaz conectada a esa red. Detén el servidor anterior e introduce esa dirección cuando PowerShell la pida.
 
