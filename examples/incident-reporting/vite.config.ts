@@ -4,7 +4,7 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   plugins: [react()],
   server: {
-    // La excepcion intencional no debe ocultar el boton que queda cargando.
+    // Keep the stuck loading state visible when the intentional error occurs.
     hmr: { overlay: false },
   },
   test: {

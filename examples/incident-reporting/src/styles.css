@@ -81,15 +81,14 @@ button:disabled { cursor: default; }
   line-height: 1.55;
 }
 
-.appointment-grid {
+.incident-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
   align-items: start;
   gap: 20px;
 }
 
-.service-card,
-.booking-card {
+.incident-card {
   padding: 28px;
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -97,31 +96,37 @@ button:disabled { cursor: default; }
   box-shadow: 0 6px 22px #12203908;
 }
 
-.appointment-grid h2 {
+.incident-card h2 {
   margin: 0 0 20px;
   font-size: 20px;
   line-height: 1.25;
   letter-spacing: -.02em;
 }
 
-.service-details {
+.incident-summary {
+  margin: 0 0 20px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.incident-details {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin: 0;
 }
 
-.service-details > div {
+.incident-details > div {
   padding: 12px;
   border-radius: 8px;
   background: #f3f6fa;
 }
 
-.service-details dt { color: var(--muted); font-size: 13px; }
-.service-details dd { margin: 4px 0 0; font-size: 14px; font-weight: 650; }
-.slot-fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.incident-details dt { color: var(--muted); font-size: 13px; }
+.incident-details dd { margin: 4px 0 0; font-size: 14px; font-weight: 650; }
+.incident-selection { min-width: 0; margin: 0; padding: 0; border: 0; }
 
-.slot-button {
+.incident-option {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,13 +138,13 @@ button:disabled { cursor: default; }
   border-radius: 8px;
   color: inherit;
   background: white;
-  font-size: 18px;
+  text-align: left;
+  font-size: 16px;
   font-weight: 700;
-  font-variant-numeric: tabular-nums;
 }
 
-.slot-button:hover:not(:disabled),
-.slot-button[aria-pressed='true'] {
+.incident-option:hover:not(:disabled),
+.incident-option[aria-pressed='true'] {
   border-color: #3d71c2;
   background: #f0f6ff;
 }
@@ -154,9 +159,9 @@ button:disabled { cursor: default; }
   border-radius: 50%;
 }
 
-.slot-button[aria-pressed='true'] .selection-indicator { border-color: var(--accent); }
+.incident-option[aria-pressed='true'] .selection-indicator { border-color: var(--accent); }
 
-.slot-button[aria-pressed='true'] .selection-indicator::before {
+.incident-option[aria-pressed='true'] .selection-indicator::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -164,7 +169,7 @@ button:disabled { cursor: default; }
   content: '';
 }
 
-.reserve-button,
+.submit-button,
 .entry-link {
   display: inline-flex;
   align-items: center;
@@ -179,9 +184,9 @@ button:disabled { cursor: default; }
   text-decoration: none;
 }
 
-.reserve-button { width: 100%; margin-top: 16px; }
-.reserve-button:hover:not(:disabled), .entry-link:hover { background: #164699; }
-.reserve-button:disabled { color: #425a7c; background: #e5edf8; }
+.submit-button { width: 100%; margin-top: 16px; }
+.submit-button:hover:not(:disabled), .entry-link:hover { background: #164699; }
+.submit-button:disabled { color: #425a7c; background: #e5edf8; }
 
 .confirmation {
   margin: 16px 0 0;
@@ -198,7 +203,7 @@ button:disabled { cursor: default; }
   .header-inner, .page { width: min(100% - 32px, 440px); }
   .header-inner { min-height: 60px; }
   .page-heading { margin-bottom: 24px; }
-  .appointment-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .service-card, .booking-card { padding: 20px; }
-  .appointment-grid h2 { margin-bottom: 14px; }
+  .incident-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .incident-card { padding: 20px; }
+  .incident-card h2 { margin-bottom: 14px; }
 }
